@@ -19,7 +19,7 @@
               tal:condition="personal_bar/user_actions">
             <a href="#"
                tal:attributes="href personal_bar/homelink_url">
-              <span class="icon-user" aria-hidden="true"></span>
+              <span class="icon plone-icon-user" aria-hidden="true"></span>
               <span tal:content="personal_bar/user_name">User</span>
               <span class="plone-toolbar-caret"></span>
             </a>
@@ -34,7 +34,7 @@
                      action title
                   </tal:actionname>
                   <tal:islogout condition="python:action['id'] == 'personaltools-logout'">
-                    <span class="icon-logout"></span>
+                    <span class="icon plone-icon-logout"></span>
                   </tal:islogout>
                 </a>
               </li>
