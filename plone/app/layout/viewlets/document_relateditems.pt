@@ -8,8 +8,20 @@
                           plone_layout nocall:context/@@plone_layout;
                           normalizeString nocall:plone_view/normalizeString;
                           context_state nocall:context/@@plone_context_state;
+                          relation_caption here/relation_caption | nothing;
                           use_view_action python:context.portal_registry.get('types_use_view_action_in_listings', []);">
-        <header i18n:translate="label_related_items">Related content</header>
+        <header>
+            <span i18n:translate=""
+                  tal:condition="relation_caption"
+                  tal:omit-tag=""
+                  tal:content="relation_caption">
+                    Custom caption
+            </span>
+            <span i18n:translate="label_related_items"
+                  tal:condition="not:relation_caption">
+                    Related content
+            </span>
+        </header>
         <ul>
           <li tal:repeat="item related">
             <span tal:define="desc                item/Description;
